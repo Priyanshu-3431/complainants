@@ -1,0 +1,284 @@
+/* ========== ROOT THEME ========== */
+:root{
+    --primary:#1e40af;
+    --secondary:#2563eb;
+    --bg:#f1f5f9;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#64748b;
+    --success:#16a34a;
+    --warning:#f59e0b;
+    --danger:#dc2626;
+}
+
+/* ========== GLOBAL RESET ========== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+}
+
+.navbar{
+    background:#0f172a;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.container{
+    padding:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.btn{
+    background:#2563eb;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.status{
+    padding:6px 10px;
+    border-radius:6px;
+    font-size:14px;
+}
+
+.pending{background:#fde68a;}
+.approved{background:#86efac;}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th,table td{
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* ========== AUTH PAGES ========== */
+.container{
+    width:380px;
+    margin:90px auto;
+    background:var(--card);
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:var(--primary);
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #c7d2fe;
+    border-radius:8px;
+    font-size:14px;
+}
+
+input:focus, textarea:focus{
+    outline:none;
+    border-color:var(--secondary);
+}
+
+/* ========== BUTTONS ========== */
+button{
+    width:100%;
+    padding:12px;
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(37,99,235,0.4);
+}
+
+/* ========== LINKS ========== */
+a{
+    color:var(--secondary);
+    text-decoration:none;
+    font-size:14px;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* ========== DASHBOARD LAYOUT ========== */
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar{
+    width:230px;
+    background:linear-gradient(180deg,#020617,#0f172a);
+    color:white;
+    padding:25px 15px;
+}
+
+.sidebar h3{
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:600;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px 15px;
+    margin-bottom:10px;
+    border-radius:8px;
+    color:#cbd5e1;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#1e293b;
+    color:white;
+}
+
+/* ========== MAIN AREA ========== */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+/* ========== CARDS ========== */
+.card{
+    background:var(--card);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* ========== ROOM LIST ========== */
+.room{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.room:last-child{
+    border-bottom:none;
+}
+
+.badge{
+    padding:5px 12px;
+    border-radius:999px;
+    font-size:12px;
+    color:white;
+}
+
+.available{ background:var(--success); }
+.pending{ background:var(--warning); }
+.booked{ background:var(--danger); }
+
+/* ========== TABLE (ADMIN) ========== */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#e0e7ff;
+    color:#1e3a8a;
+}
+
+tr:nth-child(even){
+    background:#f8fafc;
+}
+
+/* ========== FOOTER ACTIONS ========== */
+.action-btn{
+    padding:8px 14px;
+    background:var(--success);
+    color:white;
+    border-radius:6px;
+    font-size:13px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+    .dashboard{
+        flex-direction:column;
+    }
+    .sidebar{
+        width:100%;
+    }
+}

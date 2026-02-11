@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🎓 Hostel Portal</h2>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="cards">
+    <div class="card">
+        <h3>My Booking</h3>
+        {% if booking %}
+            <p>Room: {{ booking[2] }}</p>
+            <span class="status {{ booking[3]|lower }}">{{ booking[3] }}</span>
+        {% else %}
+            <p>No room booked</p>
+        {% endif %}
+    </div>
+
+    <div class="card">
+        <h3>Hostel Rules</h3>
+        <p>• Entry before 10 PM</p>
+        <p>• No outsiders</p>
+        <p>• Cleanliness mandatory</p>
+    </div>
+</div>
+
+<h2 style="margin-top:40px">🏠 Available Rooms</h2>
+<div class="cards">
+{% for r in rooms %}
+<div class="card">
+    <h3>Room {{ r[1] }}</h3>
+    <p>Total Beds: {{ r[2] }}</p>
+    <p>Available: {{ r[3] }}</p>
+    {% if r[3] > 0 %}
+    <a class="btn" href="/book/{{ r[1] }}">Book Now</a>
+    {% else %}
+    <span style="color:red">Full</span>
+    {% endif %}
+</div>
+{% endfor %}
+</div>
+
+<h2 style="margin-top:40px">📢 Complaint Box</h2>
+<form method="POST" action="/complaint">
+    <textarea name="message" required style="width:100%;padding:12px;border-radius:8px"></textarea>
+    <br><br>
+    <button class="btn">Submit Complaint</button>
+</form>
+
+</div>
+</body>
+</html>

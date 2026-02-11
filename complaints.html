@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complaints</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>My Complaints</h2>
+{% for c in complaints %}
+<p>{{c[2]}} - {{c[3]}}</p>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hostel Login</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-box {
+      width: 380px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .15)
+    }
+
+    .auth-box h2 {
+      text-align: center;
+      margin-bottom: 20px
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc
+    }
+
+    button {
+      width: 100%
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="auth-box">
+    <h2>🏨 Hostel Login</h2>
+    <form method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button class="btn">Login</button>
+    </form>
+    <p style="text-align:center;margin-top:15px">
+      New user? <a href="/register">Register</a>
+    </p>
+  </div>
+
+</body>
+
+</html>

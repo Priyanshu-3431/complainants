@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rooms</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>All Rooms</h2>
+{% for r in rooms %}
+<p>Room {{r[1]}} | Beds {{r[2]}}</p>
+{% endfor %}
+</body>
+</html>

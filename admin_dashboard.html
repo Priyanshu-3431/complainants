@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🛡️ Hostel Admin</h2>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+<h2>📄 Room Bookings</h2>
+<table>
+<tr>
+<th>ID</th><th>User ID</th><th>Room</th><th>Status</th><th>Action</th>
+</tr>
+{% for b in bookings %}
+<tr>
+<td>{{ b[0] }}</td>
+<td>{{ b[1] }}</td>
+<td>{{ b[2] }}</td>
+<td>{{ b[3] }}</td>
+<td>
+{% if b[3]=="Pending" %}
+<a href="/approve/{{ b[0] }}" class="btn">Approve</a>
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<h2 style="margin-top:40px">⚠ Complaints</h2>
+<table>
+<tr><th>User</th><th>Message</th><th>Status</th></tr>
+{% for c in complaints %}
+<tr>
+<td>{{ c[1] }}</td>
+<td>{{ c[2] }}</td>
+<td>{{ c[3] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</div>
+</body>
+</html>
